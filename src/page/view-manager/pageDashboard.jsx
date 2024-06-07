@@ -1,7 +1,7 @@
 import "./mainDash/style/dashBoard.css";
 import { DiAptana } from "react-icons/di";
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link  } from "react-router-dom";
 import MainDash from "./mainDash";
 import Cookies from 'js-cookie';
 import axios from 'axios';
@@ -146,7 +146,7 @@ function DashBoard() {
           {showConfigMenu && (
             <div className="config-menu">
               <button className="go-out-menu-button" onClick={handleLogout}>Cerrar sesión</button>
-              <link to="https://documentacion-gestor-f6indwulc-darkkay007s-projects.vercel.app/">documentacion</link>
+                    <Link to="https://documentacion-gestor-f6indwulc-darkkay007s-projects.vercel.app" className="text-white">Volver al inicio</Link>
               <button className="delete-menu-button" onClick={() => setShowConfirmDelete(true)}>Eliminar cuenta</button>
               <button className="toggle-theme-button" onClick={toggleTheme}>
                 {theme === "dark-mode" ? 'Modo Claro' : 'Modo Oscuro'}
