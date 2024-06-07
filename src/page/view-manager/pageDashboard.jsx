@@ -1,7 +1,7 @@
 import "./mainDash/style/dashBoard.css";
 import { DiAptana } from "react-icons/di";
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation, Link  } from "react-router-dom";
+import { useNavigate, useLocation} from "react-router-dom";
 import MainDash from "./mainDash";
 import Cookies from 'js-cookie';
 import axios from 'axios';
