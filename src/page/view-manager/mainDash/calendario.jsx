@@ -28,7 +28,6 @@ const Calendario = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [updatedDate, setUpdatedDate] = useState(new Date());
 
-
   const fetchTareas = async () => {
     const token = Cookies.get('token');
     if (!token) {
@@ -97,7 +96,7 @@ const Calendario = () => {
     setModalIsOpen(false);
   };
 
-  const handleSelect = async ({ start, end }) => {
+  const handleSelect = ({ start, end }) => {
     setIsEdit(false);
     setNewMeeting({
       ...newMeeting,
@@ -277,18 +276,17 @@ const Calendario = () => {
     setUpdatedDate(date);
   };
   
-  
   return (
     <div>
       {message && <p>{message}</p>}
       <input
-      type="date"
-      onChange={handleDateChange}
-      value={selectedDate.toISOString().split('T')[0]}
-      className="date-input"
-      min="1900-01-01"
-    />
-    <button onClick={handleUpdateCalendar} className="update-button">Clic para ir a la fecha</button>
+        type="date"
+        onChange={handleDateChange}
+        value={selectedDate.toISOString().split('T')[0]}
+        className="date-input"
+        min="1900-01-01"
+      />
+      <button onClick={handleUpdateCalendar} className="update-button">Clic para ir a la fecha</button>
 
       <Calendar
         localizer={localizer}
